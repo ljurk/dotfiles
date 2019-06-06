@@ -22,9 +22,13 @@ if &term =~ '256color'
     " render properly when inside 256-color tmux and GNU screen.
     set t_ut=
 endif
+
+let mapleader = ","
+
 " recommandations from https://realpython.com/vim-and-python-a-match-made-in-heaven/
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
 " color it up
     color nachtleben
 " tab settings
@@ -101,3 +105,17 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
     autocmd FileType php,html inoremap ,dt <dt></dt><Enter><dd><++></dd><Enter><++><esc>2kcit
     autocmd FileType php,html inoremap ,dl <dl><Enter><Enter></dl><enter><enter><++><esc>3kcc
     autocmd FileType php,html inoremap &<space> &amp;<space>
+"markdown
+function! UnderlineHeading(level)
+  if a:level == 1
+    normal! yypVr=
+  elseif a:level == 2
+    normal! yypVr-
+  else
+    normal! I###<space>
+  endif
+endfunction
+
+nnoremap <leader>u1 :call UnderlineHeading(1);<Enter>
+nnoremap <leader>u2 :call UnderlineHeading(2);<Enter>
+nnoremap <leader>u3 :call UnderlineHeading(3);<Enter>
