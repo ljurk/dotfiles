@@ -1,12 +1,12 @@
 output DP1
 off
-output HDMI1
+output HDMI-1
 off
-output VGA1
+output VGA-1
 off
-output VIRTUAL1
+output VIRTUAL-1
 off
-output LVDS1
+output LVDS-1
 mode 1366x768
 pos 0x0
 primary
