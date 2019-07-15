@@ -33,7 +33,7 @@ fi
 
 if [[ "$sec" -eq 0 ]] ; then
     #send notification and delete file
-    notify-send "time end"
+    notify-send "################### time end ##################" --urgency=critical
     rm "$file"
 else
     #write filecontent-1 back to file
@@ -41,10 +41,16 @@ else
     echo "$out" > "$file"
 fi
 
-#add a 0 to one char numbers
-timerizeNumber $((sec/3600))
+#convert seconds to hours, minutes, and seconds
+hours=$((sec/3600))
+sec=$((sec-hours*3600))
+min=$((sec/60))
+sec=$((sec-min*60))
+
+#add a leading 0 if its a single digit
+timerizeNumber $hours
 hours=$return
-timerizeNumber $((sec/60))
+timerizeNumber $min
 min=$return
 timerizeNumber $sec
 sec=$return

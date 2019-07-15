@@ -4,12 +4,12 @@ output VIRTUAL1
 off
 output LVDS1
 off
-output HDMI1
+output HDMI-1
 mode 1920x1080
 pos 0x0
 primary
 rate 60.00
-output VGA1
+output VGA-1
 mode 1680x1050
 pos 1920x0
 rate 59.95
