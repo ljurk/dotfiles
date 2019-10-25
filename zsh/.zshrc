@@ -114,3 +114,5 @@ alias vd="vagrant destroy"
 alias a="ansible"
 alias ap="ansible-playbook"
 alias av="ansible-vault edit"
+# docker
+alias dcup="docker-compose up"
