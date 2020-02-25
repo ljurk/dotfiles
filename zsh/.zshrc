@@ -117,4 +117,6 @@ alias a="ansible"
 alias ap="ansible-playbook"
 alias av="ansible-vault edit"
 # docker
+alias d="docker"
+alias dcp="docker-compose"
 alias dcup="docker-compose up"
